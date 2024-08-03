@@ -43,6 +43,7 @@ class DND_API UDnDCharacterDataAsset : public UDataAsset
     GENERATED_BODY()
    
 public:
+
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character")
     FText Name;
 

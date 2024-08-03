@@ -44,17 +44,20 @@ class DND_API UDnDCharacterDataAsset : public UDataAsset
    
 public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character")
-    FString CharacterName;
+    FText Name;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character")
-    UTexture2D* CharacterImage;
+    UTexture2D* Portrait;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character")
-    EDnDCharacterRace CharacterRace;
+    UTexture2D* Preview;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character")
-    EDnDCharacterClass CharacterClass;
+    EDnDCharacterRace Race;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character")
-    TMap<EDnDAbilityScore, int32> CharacterAbilityScores;
+    EDnDCharacterClass Class;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character")
+    TMap<EDnDAbilityScore, int32> AbilityScores;
 };

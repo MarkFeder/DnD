@@ -8,7 +8,19 @@ public class DnD : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "Slate", "SlateCore" });
+		PublicDependencyModuleNames.AddRange(new string[] 
+		{ 
+			"Core", 
+			"CoreUObject", 
+			"Engine", 
+			"InputCore", 
+			"EnhancedInput", 
+			"Slate", 
+			"SlateCore",
+			"UMG",
+			"CommonUI",
+			"CommonInput"
+        });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
