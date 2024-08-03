@@ -59,6 +59,18 @@ void UDnDCharacterSelectionScreen::UpdateCharacter(int32 CharacterIndex)
     CharacterPreviewImage->SetVisibility(SelectedCharacter->Preview ? ESlateVisibility::SelfHitTestInvisible : ESlateVisibility::Collapsed);
 
     CharacterName->SetText(SelectedCharacter->Name);
+
+    CharacterRace->SetText(DnDUIUtils::ConvertRaceToText(SelectedCharacter->Race));
+    CharacterClass->SetText(DnDUIUtils::ConvertClassToText(SelectedCharacter->Class));
+
+    FText InvalidAbilityScore = FText::AsNumber(-1);
+
+    CharacterSTR->SetText(SelectedCharacter->AbilityScores.Contains(EDnDAbilityScore::STR) ? FText::AsNumber(SelectedCharacter->AbilityScores[EDnDAbilityScore::STR]) : InvalidAbilityScore);
+    CharacterINT->SetText(SelectedCharacter->AbilityScores.Contains(EDnDAbilityScore::INT) ? FText::AsNumber(SelectedCharacter->AbilityScores[EDnDAbilityScore::INT]) : InvalidAbilityScore);
+    CharacterWIS->SetText(SelectedCharacter->AbilityScores.Contains(EDnDAbilityScore::WIS) ? FText::AsNumber(SelectedCharacter->AbilityScores[EDnDAbilityScore::WIS]) : InvalidAbilityScore);
+    CharacterDEX->SetText(SelectedCharacter->AbilityScores.Contains(EDnDAbilityScore::DEX) ? FText::AsNumber(SelectedCharacter->AbilityScores[EDnDAbilityScore::DEX]) : InvalidAbilityScore);
+    CharacterCON->SetText(SelectedCharacter->AbilityScores.Contains(EDnDAbilityScore::CON) ? FText::AsNumber(SelectedCharacter->AbilityScores[EDnDAbilityScore::CON]) : InvalidAbilityScore);
+    CharacterCHA->SetText(SelectedCharacter->AbilityScores.Contains(EDnDAbilityScore::CHA) ? FText::AsNumber(SelectedCharacter->AbilityScores[EDnDAbilityScore::CHA]) : InvalidAbilityScore);
 }
 
 void UDnDCharacterSelectionScreen::OnPlayButtonClicked()

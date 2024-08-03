@@ -37,6 +37,27 @@ enum class EDnDCharacterClass : uint8
     Wizard      UMETA(DisplayName = "Wizard")
 };
 
+class DND_API DnDUIUtils
+{
+public:
+
+    inline static FText ConvertRaceToText(const EDnDCharacterRace& CharacterRace)
+    {
+		const UEnum* EnumPtr = FindObject<UEnum>(ANY_PACKAGE, TEXT("EDnDCharacterRace"), true);
+		if (!EnumPtr) return FText::FromString("Invalid");
+
+		return EnumPtr->GetDisplayNameTextByValue((int64)CharacterRace);
+    }
+
+    inline static FText ConvertClassToText(const EDnDCharacterClass& CharacterClass)
+    {
+        const UEnum* EnumPtr = FindObject<UEnum>(ANY_PACKAGE, TEXT("EDnDCharacterClass"), true);
+        if (!EnumPtr) return FText::FromString("Invalid");
+
+        return EnumPtr->GetDisplayNameTextByValue((int64)CharacterClass);
+    }
+};
+
 UCLASS(BlueprintType)
 class DND_API UDnDCharacterDataAsset : public UDataAsset
 {

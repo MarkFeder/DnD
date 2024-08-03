@@ -32,6 +32,34 @@ protected:
     UTextBlock* CharacterName;
 
     UPROPERTY(BlueprintReadOnly, Category="Widgets", meta=(BindWidget))
+    UTextBlock* CharacterRace;
+
+    UPROPERTY(BlueprintReadOnly, Category="Widgets", meta=(BindWidget))
+    UTextBlock* CharacterClass;
+
+    ///////////////////////////////////////////////////////////////////
+
+    UPROPERTY(BlueprintReadOnly, Category="Widgets", meta=(BindWidget))
+    UTextBlock* CharacterSTR;
+
+    UPROPERTY(BlueprintReadOnly, Category="Widgets", meta=(BindWidget))
+    UTextBlock* CharacterINT;
+
+    UPROPERTY(BlueprintReadOnly, Category="Widgets", meta=(BindWidget))
+    UTextBlock* CharacterWIS;
+
+    UPROPERTY(BlueprintReadOnly, Category="Widgets", meta=(BindWidget))
+    UTextBlock* CharacterDEX;
+
+    UPROPERTY(BlueprintReadOnly, Category="Widgets", meta=(BindWidget))
+    UTextBlock* CharacterCON;
+
+    UPROPERTY(BlueprintReadOnly, Category="Widgets", meta=(BindWidget))
+    UTextBlock* CharacterCHA;
+
+    ///////////////////////////////////////////////////////////////////
+
+    UPROPERTY(BlueprintReadOnly, Category="Widgets", meta=(BindWidget))
     UButton* PlayButton;
 
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Widgets")
