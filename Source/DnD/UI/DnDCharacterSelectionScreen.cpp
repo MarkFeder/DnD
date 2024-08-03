@@ -16,7 +16,7 @@ void UDnDCharacterSelectionScreen::NativeConstruct()
 
     PopulateCharacterList();
 
-    if (PlayButton)
+    if (!PlayButton->OnClicked.IsBound())
     {
         PlayButton->OnClicked.AddDynamic(this, &UDnDCharacterSelectionScreen::OnPlayButtonClicked);
     }
@@ -56,7 +56,6 @@ void UDnDCharacterSelectionScreen::UpdateCharacter(int32 CharacterIndex)
     UDnDCharacterDataAsset* SelectedCharacter = CharacterDataAssets[CharacterIndex];
 
     CharacterPreviewImage->SetBrushFromTexture(SelectedCharacter->Preview);
-    CharacterPreviewImage->SetVisibility(SelectedCharacter->Preview ? ESlateVisibility::SelfHitTestInvisible : ESlateVisibility::Collapsed);
 
     CharacterName->SetText(SelectedCharacter->Name);
 

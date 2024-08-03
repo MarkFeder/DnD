@@ -65,21 +65,21 @@ class DND_API UDnDCharacterDataAsset : public UDataAsset
    
 public:
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character")
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Character")
     FText Name;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character")
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Character")
     UTexture2D* Portrait;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character")
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Character")
     UTexture2D* Preview;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character")
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Character")
     EDnDCharacterRace Race;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character")
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Character")
     EDnDCharacterClass Class;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Character")
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Character")
     TMap<EDnDAbilityScore, int32> AbilityScores;
 };
